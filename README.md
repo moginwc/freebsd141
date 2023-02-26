@@ -1,1 +1,1 @@
-# freebsd124
+# freebsd124の設定
