@@ -1,0 +1,124 @@
+#---------------
+# fvwm2全般設定
+#---------------
+    # 仮想デスクトップは使用しない
+    DeskTopSize 1x1
+    # ウインドウをマウスでクリックしたらフォーカスする
+    Style * ClickToFocus
+    # デスクトップ左下に最小化したアイコンを配置する
+    Style * IconBox 1 -1 -1 -1
+    # ウインドウ枠の幅
+    Style * borderWidth 5 , HandleWidth 5
+    # ウインドウをMWM風にする
+    Style * MWMBorder , MWMButtons , MWMdecor
+
+#----------
+# フォント
+#----------
+    # デスクトップ上に表示されるメニューのフォント
+#    MenuStyle * Font -*-sans-*-r-*-*-12-*-*-*-*-*-jisx0201.1976-*
+    # ウインドウの上部に表示されるタイトルのフォント
+#    Style * Font -*-sans-*-r-*-*-12-*-*-*-*-*-jisx0201.1976-*
+    # アイコンに表示されるフォント
+#    Style * IconFont -*-sans-*-r-*-*-12-*-*-*-*-*-jisx0201.1976-*
+
+#----------------
+# ウインドウの色
+#----------------
+    # フォーカスされているウインドウ(タイトルの色、枠の色)
+    Style * HilightFore white , HilightBack #b24d7a
+    # ウインドウの色(タイトルの色、枠の色)
+    Style * Color Black/#aeb2c3
+
+#--------------------------
+# アプリケーション毎の設定
+#--------------------------
+    # xclockはタイトルを表示させない
+    Style "xclock" NoTitle
+    # mltermのアイコンを設定する
+    Style "mlterm" Icon /usr/local/share/fvwm/pixmaps/xterm-sol.xpm
+    # アイコン未定義のアイコンを設定する
+    Style * Icon /usr/local/share/fvwm/pixmaps/programs.xpm
+
+#--------------
+# マウスの設定
+#--------------
+    # デスクトップ上で左クリックした場合
+    Mouse 1 R A Nop
+    # デスクトップ上でマウスのホイールボタンをクリックした場合
+    Mouse 2 R A WindowList
+    # デスクトップ上で右クリックした場合
+    Mouse 3 R A Menu RootMenu Nop
+
+#--------------------
+# タイトルバーの設定
+#--------------------
+    # タイトルバー左を左クリックした場合
+    Mouse 1 1 A Menu Window-Ops Close
+    # タイトルバーの最も右側を左クリックした場合
+    Mouse 1 2 A Maximize
+    # タイトルバーの最も右側から2番目を左クリックした場合
+    Mouse 1 4 A Iconify
+
+#------------------------
+# その他のマウス関連設定
+#------------------------
+    # タイトルバーを右クリックした場合
+    Mouse 3 T A Menu Window-Ops Nop
+    # 最小化したソフトのアイコンを左クリックした場合
+    Mouse 1 I A Iconify
+    # タイトルバーをクリック、ドラッグ、ダブルクリックした場合
+    Mouse 1 T A Func-Maximize
+    AddToFunc Func-Maximize I Raise
+    +                       M Move
+    +                       D Maximize
+
+#--------------------------
+# ルートメニューの配色設定
+#--------------------------
+    # MWM風にする
+    MenuStyle * Mwm
+    # メニュー枠の太さ
+    MenuStyle * BorderWidth 1
+    # メニューの背景色
+    MenuStyle * Background #cecece
+    # 選択されたメニューの背景色
+    MenuStyle * HilightBack #b5b5b5
+    # 選択されたメニューの見た目を押された感じにする
+    MenuStyle * Hilight3DThickness -1
+
+#----------------------
+# ルートメニューの設定
+#----------------------
+AddToMenu RootMenu    "ワークスペース"    Title
++                     "プログラム"        Popup Programs
++                     "ユーティリティ"    Popup Utilities
++                     ""                  Nop
++                     "終了..."           Popup Quit-Verify
+
+AddToMenu Programs    "プログラム"        Title
++                     "端末エミュレータ..."   Exec exec mlterm -title=端末エミュレータ
++                     ""                  Nop
++                     "時計..."           Exec exec xclock
++                     "電卓..."           Exec exec xcalc
++                     ""                  Nop
++                     "スクリーンショット..." Exec exec scrot 'screenshot%Y%m%d%H%M%S.png'
++                     ""                  Nop
++                     "ウェブブラウザ..." Exec exec firefox
+
+AddToMenu Utilities   "ユーティリティ"    Title
++                     "再表示"            Refresh
++                     "ウィンドウマネージャの再起動..." Restart
++                     "入力メソッドの設定..."           Exec exec uim-pref-gtk3
++                     "日本語入力システム設定..."       Exec exec uim-pref-gtk3
+
+AddToMenu Window-Ops  "移動"              Move
++                     "サイズ変更"        Resize
++                     "アイコン化"        Iconify
++                     "最大表示"          Maximize
++                     "奥へ"              Lower
++                     ""                  Nop
++                     "閉じる"            Delete
+
+AddToMenu Quit-Verify "終了"              Title
++                     "ウィンドウ終了"    Quit
