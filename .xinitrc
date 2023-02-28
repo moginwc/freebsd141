@@ -14,7 +14,7 @@ xset r rate 250 40
 xset m 5 2
 
 xsetroot -solid \#5b468f
-xclock -geometry 96x96-0+1 &
-mlterm -geometry 80x24+1+1 &
+xclock -geometry 80x80-0+1 &
+mlterm -geometry 80x24+1+1 -title "端末エミュレータ" &
 
 exec fvwm2
