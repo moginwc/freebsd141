@@ -1,6 +1,6 @@
 #!/bin/tcsh
 
-# https://moginwc.sakura.ne.jp/FreeBSD124InstallGuide.pdf
+# https://moginwc.sakura.ne.jp/FreeBSD132InstallGuide.pdf
 # 50〜60ページ、および75〜77ページを自動化するサンプル
 
 sudo pkg install -y vim
@@ -12,6 +12,7 @@ sudo pkg install -y ja-uim-anthy uim-gtk3 uim-qt5
 sudo pkg install -y firefox
 sudo pkg install -y scrot
 sudo pkg install -y sdump
+sudo pkg install -y xlockmore
 
 sudo pkg update -f
 sudo pkg upgrade
@@ -23,4 +24,5 @@ cp .fvwm2rc ~
 cp .vimrc ~
 cp .xinitrc ~
 
+mkdir ~/.anthy
 touch ~/.anthy/private_words_default
