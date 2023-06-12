@@ -94,7 +94,7 @@ AddToMenu RootMenu    "ワークスペース"    Title
 +                     "プログラム"        Popup Programs
 +                     "ユーティリティ"    Popup Utilities
 +                     ""                  Nop
-+                     "終了..."           Popup Quit-Verify
++                     "終了..."           Module FvwmForm QuitVerify
 
 AddToMenu Programs    "プログラム"        Title
 +                     "端末エミュレータ..."   Exec exec mlterm -title=端末エミュレータ
@@ -109,6 +109,7 @@ AddToMenu Programs    "プログラム"        Title
 AddToMenu Utilities   "ユーティリティ"    Title
 +                     "再表示"            Refresh
 +                     "ウィンドウマネージャの再起動..." Restart
++                     "ロックスクリーン"  Exec exec xlock -mode blank -mousemotion -timeout 10
 +                     "入力メソッドの設定..."           Exec exec uim-pref-gtk3
 +                     "日本語入力システム設定..."       Exec exec uim-pref-gtk3
 
@@ -120,5 +121,24 @@ AddToMenu Window-Ops  "移動"              Move
 +                     ""                  Nop
 +                     "閉じる"            Delete
 
-AddToMenu Quit-Verify "終了"              Title
-+                     "ウィンドウ終了"    Quit
+#--------------
+# fvwm終了確認
+#--------------
+*QuitVerifyGrabServer
+#*QuitVerifyWarpPointer
+*QuitVerifyFont
+*QuitVerifyButtonFont
+*QuitVerifyFore			Black
+*QuitVerifyBack         #cecece
+*QuitVerifyItemFore     Black
+*QuitVerifyItemBack     #cecece
+*QuitVerifyLine         center
+*QuitVerifyText         "ウインドウシステムを終了しますか?"
+*QuitVerifyLine         center
+*QuitVerifyText         ""
+*QuitVerifyLine         expand
+*QuitVerifyButton       quit      " 終了 "
+*QuitVerifyCommand      Quit
+*QuitVerifyButton       quit      "取消し"
+*QuitVerifyCommand      Nop
+Style "QuitVerify" NoTitle,NoHandles,BorderWidth 5
