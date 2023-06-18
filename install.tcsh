@@ -1,7 +1,7 @@
 #!/bin/tcsh
 
 # https://moginwc.sakura.ne.jp/FreeBSD132InstallGuide.pdf
-# 50〜60ページ、および75〜77ページを自動化するサンプル
+# 51〜62ページ、および77〜79ページを自動化するサンプル
 
 sudo pkg install -y vim
 sudo pkg install -y xorg
