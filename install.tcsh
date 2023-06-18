@@ -23,6 +23,7 @@ cp .cshrc ~
 cp .fvwm2rc ~
 cp .vimrc ~
 cp .xinitrc ~
+cp .login ~
 
 mkdir ~/.anthy
 touch ~/.anthy/private_words_default
