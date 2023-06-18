@@ -133,7 +133,7 @@ AddToMenu Window-Ops  "移動"              Move
 *QuitVerifyItemFore     Black
 *QuitVerifyItemBack     #cecece
 *QuitVerifyLine         center
-*QuitVerifyText         "ウインドウシステムを終了しますか?"
+*QuitVerifyText         "ウィンドウシステムを終了しますか?"
 *QuitVerifyLine         center
 *QuitVerifyText         ""
 *QuitVerifyLine         expand
