@@ -103,7 +103,7 @@ AddToMenu Programs    "プログラム"        Title
 +                     "電卓..."           Exec exec xcalc
 +                     "パフォーマンスメーター..." Exec exec xterm -e top 
 +                     ""                  Nop
-+                     "スクリーンショット..." Exec exec scrot 'screenshot%Y%m%d%H%M%S.png'
++                     "スクリーンショット..." Exec exec scrot -s -b 'screenshot%Y%m%d%H%M%S.png'
 +                     ""                  Nop
 +                     "ウェブブラウザ..." Exec exec firefox
 
