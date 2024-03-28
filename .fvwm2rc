@@ -34,7 +34,7 @@
 # アプリケーション毎の設定
 #--------------------------
     # xclockはタイトルを表示させない
-    Style "xclock" NoTitle
+    Style "xclock" NoTitle, BorderWidth 0, HandleWidth 0
     # mltermのアイコンを設定する
     Style "mlterm" Icon /usr/local/share/fvwm/pixmaps/xterm-sol.xpm
     # アイコン未定義のアイコンを設定する
@@ -101,6 +101,7 @@ AddToMenu Programs    "プログラム"        Title
 +                     ""                  Nop
 +                     "時計..."           Exec exec xclock
 +                     "電卓..."           Exec exec xcalc
++                     "パフォーマンスメーター..." Exec exec xterm -e top 
 +                     ""                  Nop
 +                     "スクリーンショット..." Exec exec scrot 'screenshot%Y%m%d%H%M%S.png'
 +                     ""                  Nop
