@@ -9,10 +9,11 @@ export XMODIFIERS=@im=uim
 export XIM=uim
 uim-xim &
 uim-toolbar-gtk3 &
-xmodmap ~/.Xmodmap
+
 
 xset r rate 250 40
 xset m 5 2
+xmodmap ~/.Xmodmap
 
 xsetroot -solid \#5b468f
 xclock -update 1 -d -strftime '%Y-%m-%d(%a) %T' -geometry -0+1 &
