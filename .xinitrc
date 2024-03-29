@@ -10,7 +10,6 @@ export XIM=uim
 uim-xim &
 uim-toolbar-gtk3 &
 
-
 xset r rate 250 40
 xset m 5 2
 xmodmap ~/.Xmodmap
