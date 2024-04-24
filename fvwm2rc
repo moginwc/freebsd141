@@ -1,0 +1,183 @@
+#---------------
+# fvwm2全般設定
+#---------------
+    # 仮想デスクトップは使用しない
+    DeskTopSize 1x1
+    # ウインドウをマウスでクリックしたらフォーカスする
+    Style * ClickToFocus
+    # デスクトップ左下に最小化したアイコンを配置する
+    Style * IconBox 1 -1 -1 -1
+    # ウインドウ枠の幅
+    Style * borderWidth 5 , HandleWidth 5
+    # ウインドウをMWM風にする
+    Style * MWMBorder , MWMButtons , MWMdecor
+
+#----------
+# フォント
+#----------
+    # ウインドウの上部に表示されるタイトルのフォント
+    Style * Font "xft:Sans:size=12"
+    # アイコンに表示されるフォント
+    Style * IconFont "xft:Sans:size=12"
+
+#----------------
+# ウインドウの色
+#----------------
+    # フォーカスされているウインドウ(タイトルの色、枠の色)
+    Style * HilightFore white , HilightBack #b24d7a
+    # ウインドウの色(タイトルの色、枠の色)
+    Style * Color #444444/#aeb2c3
+
+#--------------------------
+# アプリケーション毎の設定
+#--------------------------
+    # xclockはタイトルを表示させない
+    Style "xclock" NoTitle, BorderWidth 0, HandleWidth 0
+    # mltermのアイコンを設定する
+    Style "mlterm" Icon /usr/local/share/fvwm/pixmaps/xterm-sol.xpm
+    # アイコン未定義のアイコンを設定する
+    Style * Icon /usr/local/share/fvwm/pixmaps/programs.xpm
+
+#--------------
+# マウスの設定
+#--------------
+    # デスクトップ上で左クリックした場合
+    Mouse 1 R A Nop
+    # デスクトップ上でマウスのホイールボタンをクリックした場合
+    Mouse 2 R A WindowList
+    # デスクトップ上で右クリックした場合
+    Mouse 3 R A Menu RootMenu Nop
+
+#--------------------
+# タイトルバーの設定
+#--------------------
+    # タイトルバー左を左クリックした場合
+    Mouse 1 1 A Menu Window-Ops Close
+    # タイトルバーの最も右側を左クリックした場合
+    Mouse 1 2 A Close
+    # タイトルバーの最も右側から2番目を左クリックした場合
+    Mouse 1 4 A Maximize
+    # タイトルバーの最も右側から3番目を左クリックした場合
+    Mouse 1 6 A Iconify
+
+    # タイトルバーのボタン形状
+    ButtonStyle 1 AllActive    Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 \
+                                        45x45@3
+    ButtonStyle 1 AllInActive  Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 \
+                                        45x45@3
+    ButtonStyle 2 AllActive    Vector 5 35x35@3 65x65@3 65x35@4 35x65@3 \
+                                        65x35@3
+    ButtonStyle 2 AllInActive  Vector 5 35x35@3 65x65@3 65x35@4 35x65@3 \
+                                        65x35@3
+    ButtonStyle 4 AllActive    Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 \
+                                        30x70@3 50x30@4 50x50@3 70x50@3
+    ButtonStyle 4 AllInActive  Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 \
+                                        30x70@3 50x30@4 50x50@3 70x50@3
+    ButtonStyle 6 AllActive    Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 \
+                                        35x60@3
+    ButtonStyle 6 AllInActive  Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 \
+                                        35x60@3
+
+#------------------------
+# その他のマウス関連設定
+#------------------------
+    # タイトルバーを右クリックした場合
+    Mouse 3 T A Menu Window-Ops Nop
+    # 最小化したソフトのアイコンを左クリックした場合
+    Mouse 1 I A Iconify
+    # タイトルバーをクリック、ドラッグ、ダブルクリックした場合
+    Mouse 1 T A Func-Maximize
+    AddToFunc Func-Maximize I Raise
+    +                       M Move
+    +                       D Maximize
+
+#--------------------------
+# ルートメニューの配色設定
+#--------------------------
+    # MWM風にする
+    MenuStyle * Mwm
+    # メニュー枠の太さ
+    MenuStyle * BorderWidth 1
+    # メニューの背景色
+    MenuStyle * Background #cecece
+    # 選択されたメニューの背景色
+    MenuStyle * HilightBack #b5b5b5
+    # 選択されたメニューの見た目を押された感じにする
+    MenuStyle * Hilight3DThickness -1
+    # デスクトップ上に表示されるメニューのフォント
+    MenuStyle * Font "xft:Sans:size=12"
+
+#----------------------
+# ルートメニューの設定
+#----------------------
+AddToMenu RootMenu    "ワークスペース"    Title
++                     "プログラム"        Popup Programs
++                     "ユーティリティ"    Popup Utilities
++                     ""                  Nop
++                     "終了..."           Module FvwmForm QuitVerify
+
+AddToMenu Programs    "プログラム"        Title
++                     "端末エミュレータ..."   Exec exec mlterm -title=端末エミュレータ
++                     ""                  Nop
++                     "時計..."           Exec exec xclock
++                     "電卓..."           Exec exec xcalc
++                     "パフォーマンスメータ..." Exec exec xterm -e top 
++                     ""                  Nop
++                     "スクリーンショット..." Exec exec scrot -s -b 'screenshot%Y%m%d%H%M%S.png'
++                     ""                  Nop
++                     "ウェブブラウザ..." Exec exec firefox
+
+AddToMenu Utilities   "ユーティリティ"    Title
++                     "再表示"            Refresh
++                     "ウィンドウマネージャの再起動..." Restart
++                     "ロックスクリーン"  Exec exec xlock -mode blank -mousemotion -timeout 10
++                     "入力メソッドの設定..."           Exec exec uim-pref-gtk3
++                     "日本語入力システム設定..."       Exec exec uim-pref-gtk3
+
+AddToMenu Window-Ops  "移動"              Move
++                     "サイズ変更"        Resize
++                     "アイコン化"        Iconify
++                     "最大表示"          Maximize
++                     "奥へ"              Lower
++                     ""                  Nop
++                     "閉じる"            Delete
+
+#--------------
+# fvwm終了確認
+#--------------
+*QuitVerifyGrabServer
+#*QuitVerifyWarpPointer
+*QuitVerifyFont         xft:Sans:size=12
+*QuitVerifyButtonFont   xft:Sans:size=12
+*QuitVerifyFore         Black
+*QuitVerifyBack         #cecece
+*QuitVerifyItemFore     Black
+*QuitVerifyItemBack     #cecece
+*QuitVerifyLine         center
+*QuitVerifyText         "ウィンドウシステムを終了しますか?"
+*QuitVerifyLine         center
+*QuitVerifyText         ""
+*QuitVerifyLine         expand
+*QuitVerifyButton       quit      " 終了 "
+*QuitVerifyCommand      Quit
+*QuitVerifyButton       quit      "取消し"
+*QuitVerifyCommand      Nop
+Style "QuitVerify" NoTitle,NoHandles,BorderWidth 5
+
+#------------------
+# ランチャーの設定
+#------------------
+ImagePath /usr/local/share/fvwm/pixmaps/:/home/pcuser/icons
+EwmhBaseStruts 0 0 0 62
+AddToFunc InitFunction    "I" Module FvwmButtons
+AddToFunc RestartFunction "I" Module FvwmButtons
+Style "FvwmButtons" NoTitle, BorderWidth 0, HandleWidth 0
+*FvwmButtonsBack     #cecece
+*FvwmButtonsGeometry +539-1
+*FvwmButtonsRows     1
+*FvwmButtons         ""  firefox.xpm   Exec exec firefox &
+*FvwmButtons         ""  xterm-sol.xpm Exec exec mlterm -title="端末エミュレータ" &
+*FvwmButtons(Swallow "xclock" \
+    'Exec exec xclock -bg \\#cecece &')
+*FvwmButtons(Swallow "xload" \
+    'Exec exec xload -update 3 -nolabel -bg \\#cecece &')
