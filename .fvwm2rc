@@ -15,12 +15,10 @@
 #----------
 # フォント
 #----------
-    # デスクトップ上に表示されるメニューのフォント
-#    MenuStyle * Font -*-sans-*-r-*-*-12-*-*-*-*-*-jisx0201.1976-*
     # ウインドウの上部に表示されるタイトルのフォント
-#    Style * Font -*-sans-*-r-*-*-12-*-*-*-*-*-jisx0201.1976-*
+    Style * Font "xft:Sans:size=12"
     # アイコンに表示されるフォント
-#    Style * IconFont -*-sans-*-r-*-*-12-*-*-*-*-*-jisx0201.1976-*
+    Style * IconFont "xft:Sans:size=12"
 
 #----------------
 # ウインドウの色
@@ -28,7 +26,7 @@
     # フォーカスされているウインドウ(タイトルの色、枠の色)
     Style * HilightFore white , HilightBack #b24d7a
     # ウインドウの色(タイトルの色、枠の色)
-    Style * Color Black/#aeb2c3
+    Style * Color #444444/#aeb2c3
 
 #--------------------------
 # アプリケーション毎の設定
@@ -56,9 +54,29 @@
     # タイトルバー左を左クリックした場合
     Mouse 1 1 A Menu Window-Ops Close
     # タイトルバーの最も右側を左クリックした場合
-    Mouse 1 2 A Maximize
+    Mouse 1 2 A Close
     # タイトルバーの最も右側から2番目を左クリックした場合
-    Mouse 1 4 A Iconify
+    Mouse 1 4 A Maximize
+    # タイトルバーの最も右側から3番目を左クリックした場合
+    Mouse 1 6 A Iconify
+
+    # タイトルバーのボタン形状
+    ButtonStyle 1 AllActive    Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 \
+                                        45x45@3
+    ButtonStyle 1 AllInActive  Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 \
+                                        45x45@3
+    ButtonStyle 2 AllActive    Vector 5 35x35@3 65x65@3 65x35@4 35x65@3 \
+                                        65x35@3
+    ButtonStyle 2 AllInActive  Vector 5 35x35@3 65x65@3 65x35@4 35x65@3 \
+                                        65x35@3
+    ButtonStyle 4 AllActive    Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 \
+                                        30x70@3 50x30@4 50x50@3 70x50@3
+    ButtonStyle 4 AllInActive  Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 \
+                                        30x70@3 50x30@4 50x50@3 70x50@3
+    ButtonStyle 6 AllActive    Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 \
+                                        35x60@3
+    ButtonStyle 6 AllInActive  Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 \
+                                        35x60@3
 
 #------------------------
 # その他のマウス関連設定
@@ -86,6 +104,8 @@
     MenuStyle * HilightBack #b5b5b5
     # 選択されたメニューの見た目を押された感じにする
     MenuStyle * Hilight3DThickness -1
+    # デスクトップ上に表示されるメニューのフォント
+    MenuStyle * Font "xft:Sans:size=12"
 
 #----------------------
 # ルートメニューの設定
@@ -127,9 +147,9 @@ AddToMenu Window-Ops  "移動"              Move
 #--------------
 *QuitVerifyGrabServer
 #*QuitVerifyWarpPointer
-*QuitVerifyFont
-*QuitVerifyButtonFont
-*QuitVerifyFore			Black
+*QuitVerifyFont         xft:Sans:size=12
+*QuitVerifyButtonFont   xft:Sans:size=12
+*QuitVerifyFore         Black
 *QuitVerifyBack         #cecece
 *QuitVerifyItemFore     Black
 *QuitVerifyItemBack     #cecece
