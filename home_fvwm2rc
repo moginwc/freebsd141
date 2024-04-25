@@ -32,7 +32,7 @@
 # アプリケーション毎の設定
 #--------------------------
     # xclockはタイトルを表示させない
-    Style "xclock" NoTitle, BorderWidth 0, HandleWidth 0
+#   Style "xclock" NoTitle, BorderWidth 0, HandleWidth 0
     # mltermのアイコンを設定する
     Style "mlterm" Icon /usr/local/share/fvwm/pixmaps/xterm-sol.xpm
     # アイコン未定義のアイコンを設定する
