@@ -17,8 +17,11 @@ sudo pkg install -y xorg
 sudo pkg install -y fvwm
 sudo pkg install -y ja-font-ipa
 
-cp .xinitrc ~
-cp .fvwm2rc ~
+#cp .xinitrc ~
+#cp .fvwm2rc ~
+
+cp home_xinitrc ~/.xinitrc
+cp home_fvwm2rc ~/.fvwm2rc
 
 sudo pkg install -y mlterm
 mkdir ~/.mlterm
