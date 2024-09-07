@@ -10,6 +10,7 @@ export XIM=uim
 uim-xim &
 uim-toolbar-gtk3 -1-1 &
 
+# setxkbmap jp
 xset r rate 250 40
 xset m 5 3
 xkbcomp -I$HOME/.xkb ~/.xkb/keymap/mykbd $DISPLAY
