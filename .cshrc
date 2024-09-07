@@ -18,7 +18,7 @@ alias rm	'rm -i'
 
 # These are normally set through /etc/login.conf.  You may override them here
 # if wanted.
-# set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
+set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
 # A righteous umask
 # umask 22
 
