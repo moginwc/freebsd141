@@ -35,7 +35,7 @@ cp -r ./.mlterm ~
 sudo pkg install -y ja-uim-anthy uim-gtk3 uim-qt5
 cp -r ./.xkb ~
 
-cp -r ./uim.d ~
+cp -r ./.uim.d ~
 
 sudo pkg install -y firefox
 sudo pkg install -y scrot
