@@ -7,7 +7,7 @@ https://moginwc.sakura.ne.jp/FreeBSD141InstallGuide.pdf
 
 ステップ１．FreeBSD 14.1 インストール&設定メモ 2024-08-20 第7版 の 11〜53Pを実行する。
 ステップ２．# pkg install -y git を実行する。
-ステップ３，logout する。
+ステップ３，# exit でログアウトする。
 ステップ４．pcuser でログインする。
 ステップ５．% git clone https://github.com/moginwc/freebsd141 を実行する。
 ステップ６．% cd freebsd141
