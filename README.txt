@@ -6,16 +6,17 @@ https://moginwc.sakura.ne.jp/FreeBSD141InstallGuide.pdf
 インストールをお急ぎの方は、下記を実行してください。
 
 ステップ１．FreeBSD 14.1 インストール&設定メモ 2024-08-20 第7版 の 11〜53Pを実行する。
-ステップ２，logout する。
-ステップ３．pcuser でログインする。
-ステップ４．% git clone https://github.com/moginwc/freebsd141 を実行する。
-ステップ５．% cd freebsd141
-ステップ６．% chmod +x install.tcsh
-ステップ７．% ./install.tcsh
-ステップ８．インテル内蔵GPUの場合は下記のコマンドを実行する。
+ステップ２．# pkg install -y git を実行する。
+ステップ３，logout する。
+ステップ４．pcuser でログインする。
+ステップ５．% git clone https://github.com/moginwc/freebsd141 を実行する。
+ステップ６．% cd freebsd141
+ステップ７．% chmod +x install.tcsh
+ステップ８．% ./install.tcsh
+ステップ９．インテル内蔵GPUの場合は下記のコマンドを実行する。
            sudo echo 'kld_list="i915kms.ko"' | sudo tee -a /etc/rc.conf
-ステップ９．% sudo shutdown -r now
-ステップ１０．121ページ以降を参照。
+ステップ１０．% sudo shutdown -r now
+ステップ１１．121ページ以降を参照。
 
 --------
 
