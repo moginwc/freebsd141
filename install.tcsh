@@ -49,12 +49,6 @@ sudo pkg upgrade
 mkdir ~/.anthy
 touch ~/.anthy/private_words_default
 
-sudo pkg install -y samba416
-sudo service samba_server enable
-mkdir ~/share
-sudo cp etc_smb4.conf /usr/local/etc/smb4.conf
-sudo pdbedit -a -u pcuser
-
 sudo mv /etc/motd.template /etc/motd.template.old
 sudo touch /etc/motd.template
 
@@ -65,3 +59,9 @@ sudo pkg install -y chromium
 cp /usr/local/lib/firefox/browser/chrome/icons/default/default48.png ~/icons/firefox.png
 sudo pkg install -y xload
 sudo pkg install -y xbatt
+
+sudo pkg install -y samba416
+sudo service samba_server enable
+mkdir ~/share
+sudo cp etc_smb4.conf /usr/local/etc/smb4.conf
+sudo pdbedit -a -u pcuser
