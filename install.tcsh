@@ -60,8 +60,8 @@ sudo touch /etc/motd.template
 
 sudo service powerd enable
 
-sudo pkg install –y chromium
+sudo pkg install -y chromium
 
 cp /usr/local/lib/firefox/browser/chrome/icons/default/default48.png ~/icons/firefox.png
-sudo pkg install –y xload
-sudo pkg install –y xbatt
+sudo pkg install -y xload
+sudo pkg install -y xbatt
