@@ -4,7 +4,7 @@ sudo service ntpd enable
 sudo cp ./etc_ntp_conf /etc/ntp.conf
 
 sudo pkg install -y drm-kmod
-sudo service i915kms.ko enable
+# sudo echo 'kld_list="i915kms.ko"' | sudo tee -a /etc/rc.conf
 sudo pw groupmod video -m pcuser
 
 sudo pkg install -y vim
