@@ -12,8 +12,10 @@ https://moginwc.sakura.ne.jp/FreeBSD141InstallGuide.pdf
 ステップ５．% cd freebsd141
 ステップ６．% chmod +x install.tcsh
 ステップ７．% ./install.tcsh
-ステップ８．% sudo shutdown -r now
-ステップ９．121ページ以降を参照。
+ステップ８．インテル内蔵GPUの場合は下記のコマンドを実行する。
+           sudo echo 'kld_list="i915kms.ko"' | sudo tee -a /etc/rc.conf
+ステップ９．% sudo shutdown -r now
+ステップ１０．121ページ以降を参照。
 
 --------
 
