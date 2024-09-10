@@ -3,14 +3,23 @@ FreeBSD 14.1 インストール&設定メモ 2024-08-20 第7版 に対応
 
 インストールをお急ぎの方は、下記を実行してください。
 
+
 ステップ１．FreeBSD 14.1 インストール&設定メモ 2024-08-20 第7版 の 11〜53Pを実行する。
+
 ステップ２，logout する。
+
 ステップ３．pcuser でログインする。
+
 ステップ４．% git clone https://github.com/moginwc/freebsd141 を実行する。
+
 ステップ５．% cd freebsd141
+
 ステップ６．% chmod +x install.tcsh
+
 ステップ７．% ./install.tcsh
+
 ステップ８．% sudo shutdown -r now
+
 ステップ９．121ページ以降を参照。
 
 
